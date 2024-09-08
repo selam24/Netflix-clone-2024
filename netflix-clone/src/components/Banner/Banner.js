@@ -1,25 +1,28 @@
-import React, {useEffect, useState} from 'react'
-import axios from "../../utils/axios"
+import React, { useEffect, useState } from "react";
+import axios from "../../utils/axios";
 import requests from "../../utils/requests";
-import "./Banner.css"
+import "./Banner.css";
 
 const Banner = () => {
-    const [movie, setmovie] = useState({})
-    useEffect(()=>{
-      (async()=>{
-        try{
-          const request = await axios.get(requests.fetchNetflixOriginals)
-          console.log(request)
-          setmovie(request.data.results[
-          Math.floor(Math.random()* request.data.results.length)
-        ])
-        } catch (error){
-        console.log("error", error)
-        }
-      })()
-    }, [])
-    function truncate(str, n){
-      return str?.length>n? str.substr(0,n-1) + '...' : str;}
+  const [movie, setmovie] = useState({});
+  useEffect(() => {
+    (async () => {
+      try {
+        const request = await axios.get(requests.fetchNetflixOriginals);
+        console.log(request);
+        setmovie(
+          request.data.results[
+            Math.floor(Math.random() * request.data.results.length)
+          ]
+        );
+      } catch (error) {
+        console.log("error", error);
+      }
+    })();
+  }, []);
+  function truncate(str, n) {
+    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+  }
 
   return (
     <div
@@ -39,13 +42,11 @@ const Banner = () => {
           <button className="banner_button play">Play</button>
           <button className="banner_button">List</button>
         </div>
-        <h1 className='banner_description'>{truncate(movie?.overview, 150)}</h1>
+        <h1 className="banner_description">{truncate(movie?.overview, 150)}</h1>
       </div>
-      <div className='banner_fadeBottom'>
-      </div>
+      <div className="banner_fadeBottom"></div>
     </div>
   );
-}
+};
 
-export default Banner
-
+export default Banner;

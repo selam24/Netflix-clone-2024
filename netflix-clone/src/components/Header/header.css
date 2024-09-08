@@ -5,7 +5,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 background-color: rgb(20 20 20);
-/* background: transparent; */
+background: transparent;
 height: 10vh;
 color: white;
 transition: all 0.5s;
@@ -15,6 +15,10 @@ z-index: 1;
 min-height: 70px;
 }
 
+.kids{
+  font-size: medium;
+  font-weight: 500;
+}
 /* .nav_black{
     background-color: rgb(20 20 20);
 } */
@@ -27,10 +31,10 @@ min-height: 70px;
 }
 
 .header-left{
-  font-size: small
+  font-size: medium
 }
 .header-right{
-  font-size: small
+  font-size: medium
 }
 .header-left ul{
   display: flex;
@@ -53,3 +57,24 @@ min-height: 70px;
   margin: 10px;
   font-size: 5px;
 }
+
+
+a {
+    color: white;
+     text-decoration: none; /* Optional: remove underline */
+  }
+
+/* Style for the link when hovered over */
+a:hover {
+          color: white;
+        }
+    
+/* Style for the link when it has been visited */
+a:visited {
+            color: white;
+        }
+
+/* Style for the link when it is active (being clicked) */
+a:active {
+          color: white;
+        }
